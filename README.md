@@ -5,12 +5,11 @@ A unified toolkit for programmatically creating, annotating, and
 sanitizing GA4GH‑compliant phenopacket JSONs from Excel templates.
 
 ## Installation
-
+Directly from GitHub
 ``` r
-# Directly from GitHub
 remotes::install_url("https://github.com/adamklocperk/PhenoPacketR/releases/download/release/PhenoPacketR_0.1.0.tar.gz")
-...change the file name to whatever is the latest release.
 ```
+...change the file name to whatever is the latest release.
 
 ## Quickstart
 
