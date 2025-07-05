@@ -8,7 +8,10 @@ sanitizing GA4GH‑compliant phenopacket JSONs from Excel templates.
 
 ``` r
 # Directly from GitHub
-remotes::install_github("adamklocperk/PhenoPacketR")
+remotes::install_url(
++     "https://github.com/adamklocperk/PhenoPacketR/releases/download/release/PhenoPacketR_0.1.0.tar.gz",
++     repos = NULL, type = "source"
++ )
 ```
 
 ## Quickstart
