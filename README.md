@@ -4,7 +4,7 @@ A unified toolkit for programmatically creating, annotating, and sanitizing GA4G
 
 ``` r
 # Directly from GitHub
-remotes::install_url("https://github.com/adamklocperk/PhenoPacketR/releases/download/v0.1.1/PhenoPacketR_0.1.1.tar.gz")
+remotes::install_url("https://github.com/adamklocperk/PhenoPacketR/releases/download/v0.1.2/PhenoPacketR_0.1.2.tar.gz")
 ```
 
 ## Quickstart - each patient as one .xlsx file
