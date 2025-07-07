@@ -54,6 +54,20 @@ annotate_genomics_tall(
       )
 ```
 
+## Quickstart - exporting existing phenopackets back to templates
+
+``` r
+library(PhenoPacketR)
+
+# 1. Create a phenopacket template
+create_populated_templates_from_phenopackets(
+   pp_dir = "folder_with_phenopackets",
+   out_dir = "fodler_to_which_we_save_the_templates"
+)
+```
+
+...then you can edit those and use them for creation of updated phenopackets.
+
 ## Contributing
 
 Please open issues or pull requests on [GitHub](https://github.com/adamklocperk/PhenoPacketR). Contributions and suggestions are welcome!
