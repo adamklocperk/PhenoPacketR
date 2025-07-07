@@ -1,42 +1,65 @@
-PhenoPacketR
-================
+---
+title: "PhenoPacketR"
+output: github_document
+---
 
-A unified toolkit for programmatically creating, annotating, and
-sanitizing GA4GH‑compliant phenopacket JSONs from Excel templates.
+A unified toolkit for programmatically creating, annotating, and sanitizing GA4GH‑compliant phenopacket JSONs from Excel templates.
 
 ## Installation
-Directly from GitHub
-``` r
-remotes::install_url("https://github.com/adamklocperk/PhenoPacketR/releases/download/release/PhenoPacketR_0.1.0.tar.gz")
-```
-...change the file name to whatever is the latest release.
 
-## Quickstart
+``` r
+# Directly from GitHub
+remotes::install_url("https://github.com/adamklocperk/PhenoPacketR/releases/download/release/PhenoPacketR_0.1.1.tar.gz")
+```
+
+## Quickstart - each patient as one .xlsx file
 
 ``` r
 library(PhenoPacketR)
 
-# 0. Create templates
-generate_templates()
+# 1. Create a phenopacket template
+create_template()
+```
 
-# 1. Create phenopackets from your header template
-create_phenopackets("phenopacket_header_template.xlsx")
+...then fill in all the required data into the template. You can duplicate it as many times as you want, one for each patient.
+
+``` r
+# 2. Create the phenopackets from ALL .xlsx files in the in_dir directory, output them either into the working directory (default) or into the out_dir
+create_phenopackets(
+      in_dir = "PPs",
+      out_dir = "PPs"
+      )
+```
+
+## Quickstart - several patients in one .xlsx file
+
+``` r
+library(PhenoPacketR)
+
+# 1. Create 3 phenopacket templates, one for general header data, one for phenotypic features, one for genomic interpretations
+create_templates_tall()
+```
+
+...then fill in all the required data into the templates. Each patient/feature/variant/gene go on a new row.
+
+``` r
+# 2. Create phenopackets from your header template
+create_phenopackets_tall()
 
 # 2. Annotate with HPO-based phenotypes from the phenotypic feature template
-annotate_phenomics(in_xlsx = "phenopacket_phenotypic_template.xlsx")
+annotate_phenomics_tall(
+      in_xlsx = "phenopacket_phenotypic_template.xlsx"
+      )
 
 # 3. Annotate with genomic interpretations from the genomic variant template
-annotate_genomics(in_xlsx = "phenopacket_genomic_template.xlsx")
-
-# 4. Sanitize against the latest HPO
-sanitize_phenopackets(hpo_file = "hp_2025-05-06.obo")
+annotate_genomics_tall(
+      in_xlsx = "phenopacket_genomic_template.xlsx"
+      )
 ```
 
 ## Contributing
 
-Please open issues or pull requests on
-[GitHub](https://github.com/adamklocperk/PhenoPacketR). Contributions
-and suggestions are welcome!
+Please open issues or pull requests on [GitHub](https://github.com/adamklocperk/PhenoPacketR). Contributions and suggestions are welcome!
 
 ## License
 
