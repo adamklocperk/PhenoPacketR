@@ -24,7 +24,8 @@ create_template()
 ...then fill in all the required data into the template. You can duplicate it as many times as you want, one for each patient.
 
 ``` r
-# 2. Create the phenopackets from ALL .xlsx files in the in_dir directory, output them either into the working directory (default) or into the out_dir
+# 2. Create the phenopackets from ALL .xlsx files in the in_dir directory,
+# output them either into the working directory (default) or into the out_dir
 create_phenopackets(
       in_dir = "PPs",
       out_dir = "PPs"
@@ -36,7 +37,8 @@ create_phenopackets(
 ``` r
 library(PhenoPacketR)
 
-# 1. Create 3 phenopacket templates, one for general header data, one for phenotypic features, one for genomic interpretations
+# 1. Create 3 phenopacket templates, one for general header data,
+# one for phenotypic features, one for genomic interpretations
 create_templates_tall()
 ```
 
